@@ -9,9 +9,15 @@ jobs:
          key: deps-{{ checksum "requiremnts.lock" }}
      - run:
          command: |
+<<<<<<< HEAD
            pip install --user -r requirements.lock
      - save_cache:
          key: deps-{{ checksum "requirements.lock" }}
+=======
+           pip install --user -r requiremnts.lock
+     - save_cache:
+         key: deps-{{ checksum "requiremnts.lock" }}
+>>>>>>> c2ce50188d6cca464dab75c1f784fd63a23c9a03
          paths:
            - "~/.local"
  test:
