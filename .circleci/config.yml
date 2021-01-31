@@ -10,8 +10,8 @@ jobs:
      - run:
          command: |
            pip install --user -r requiremnts.lock
-     - save_cache
-         key: deps-{{ checksum "requiremnts.lock" }}
+     - save_cache:
+         key: deps-{{ checksum "requirements.lock" }}
          paths:
            - "~/.local"
  test:
@@ -20,7 +20,7 @@ jobs:
    steps:
      - checkout
      - restore_cache:
-         key: deps-{{ checksum "requiremnts.lock" }}
+         key: deps-{{ checksum "requirements.lock" }}
      - run:
          command: |
            python -m unittest -v
