@@ -10,7 +10,7 @@ jobs:
      - run:
          command: |
            pip install --user -r requiremnts.lock
-     - save_cache
+     - save_cache:
          key: deps-{{ checksum "requiremnts.lock" }}
          paths:
            - "~/.local"
