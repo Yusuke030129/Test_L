@@ -31,4 +31,4 @@ workflows:
       - setup_dependencies
       - test:
           requires:
-- setup_dependencies
+            - setup_dependencies
